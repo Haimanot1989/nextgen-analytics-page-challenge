@@ -2,7 +2,7 @@ import React from "react";
 const Nav = () => {
   return (
     <nav className="col-2-6 row">
-      <ul className="full-width">
+      <ul className="nav-item-container">
         <li>
           <a href="#">ACCOUNT</a>
         </li>

@@ -11,19 +11,27 @@ const Profile = () => {
 };
 
 const PlacementRepresentation = () => {
+  return (
+    <div>
+      <div className="profile-date">{FormattedDateObject().formattedDate}</div>
+      <div className="profile-time">{FormattedDateObject().formattedTime}</div>
+    </div>
+  );
+};
+
+//TODO refactor by extracting formatter as a util?
+const FormattedDateObject = () => {
   let now = new Date();
   const formattedDate = `${now.getDate()}-${
     now.getMonth() + 1
   }-${now.getFullYear()}`;
   const hourRaw = now.getHours();
   const minute = now.getMinutes();
+  const formattedMinute = minute < 10 ? `0${minute}` : minute;
   const formattedTime =
-    hourRaw < 12 ? `${hourRaw}.${minute} AM` : `${hourRaw - 12}.${minute} PM`;
-  return (
-    <div>
-      <div className="profile-date">{formattedDate}</div>
-      <div className="profile-time">{formattedTime}</div>
-    </div>
-  );
+    hourRaw < 12
+      ? `${hourRaw}.${formattedMinute} AM`
+      : `${hourRaw - 12}.${formattedMinute} PM`;
+  return { formattedDate, formattedTime };
 };
 export default Profile;
