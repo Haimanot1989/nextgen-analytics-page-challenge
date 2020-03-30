@@ -103,6 +103,7 @@ body {
   color: var(--primary-text-color);
   margin: 0px;
   padding: 0px;
+  line-height: 1.5;
 }
 
 /* grid system */
@@ -178,7 +179,6 @@ nav a {
 .profile-time {
   font-family: "Montserrat Regular";
   font-size: 18px;
-  padding-top: 4px;
 }
 
 .profile img {
@@ -250,4 +250,59 @@ i {
   border-right: 10px solid transparent;
   border-top: 10px solid var(--secondary-text-color);
   display: inline-block;
+}
+
+.main-container {
+  display: flex;
+}
+.main-content-nav {
+  display: flex;
+  flex-flow: row wrap;
+  list-style-type: none;
+  padding: 0px;
+  border-bottom: 2px solid #181922; /*TODO color present in colors?*/
+  color: var(--secondary-text-color);
+}
+
+.main-content-nav li {
+  margin: 40px 60px 20px 0px;
+}
+.sidebar {
+  display: flex;
+  list-style-type: none;
+  padding: 0px;
+  flex: 0 0 20%;
+  justify-content: center;
+  flex-flow: column nowrap;
+  align-items: flex-end;
+}
+.sidebar li:nth-child(1) {
+  margin-top: 80px;
+}
+.sidebar-icon {
+  margin: 20px;
+}
+.main-content {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 0 0 70%;
+  font-family: "Montserrat Medium";
+}
+
+.chart-container {
+  display: flex;
+}
+.sub-chart-container {
+  flex: 0 0 49.5%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  margin-right: 1%;
+}
+
+.single-chart-container {
+  border-radius: 5px;
+  background-color: var(--secondary-background-color);
+  flex: 0 0 50%;
+  margin-bottom: 10px;
 }
